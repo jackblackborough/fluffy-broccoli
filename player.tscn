@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8ll22lq4gpu4"]
+
+[ext_resource type="Script" uid="uid://kxgx6asjyasc" path="res://character_body_2d.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://djg142ps2h37i" path="res://monochrome_tilemap_transparent.png" id="2_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://bd23n70oax7pw" path="res://jump.wav" id="3_i3pqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihfcg"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rka8t"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(0, 204, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(68, 204, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(17, 204, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(34, 204, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_i3pqv")
+region = Rect2(51, 204, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5hph3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rka8t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-1462, -422)
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1462, 422)
+shape = SubResource("CapsuleShape2D_ihfcg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1462, 419)
+scale = Vector2(1.00196, 1.06912)
+sprite_frames = SubResource("SpriteFrames_5hph3")
+animation = &"jump"
+frame_progress = 0.632804
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1462, 422)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="jumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i3pqv")
