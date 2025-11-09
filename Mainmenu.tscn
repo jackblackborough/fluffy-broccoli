@@ -54,5 +54,11 @@ offset_bottom = 218.0
 theme_override_font_sizes/font_size = 33
 text = "Quit Button"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_right = 1087.0
+offset_bottom = 627.0
+color = Color(0.294118, 0.00392157, 0.403922, 1)
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

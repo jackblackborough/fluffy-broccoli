@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://dpevijpqsvlap"]
 
 [ext_resource type="Script" uid="uid://o471uptkcxrg" path="res://gem.gd" id="1_edvqy"]
-[ext_resource type="Texture2D" uid="uid://djg142ps2h37i" path="res://monochrome_tilemap_transparent.png" id="1_whk3i"]
+[ext_resource type="Texture2D" uid="uid://bibe0vvjnveli" path="res://tilemaps/dead-cells-tilemap.png" id="2_xp2mg"]
 [ext_resource type="AudioStream" uid="uid://b16d4b2e5kddi" path="res://pickupCoin.wav" id="3_xp2mg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp2mg"]
-atlas = ExtResource("1_whk3i")
-region = Rect2(34, 85, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1wgw"]
+atlas = ExtResource("2_xp2mg")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xp2mg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xp2mg")
+"texture": SubResource("AtlasTexture_d1wgw")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -28,6 +28,7 @@ script = ExtResource("1_edvqy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.0625, 1.0625)
 sprite_frames = SubResource("SpriteFrames_xp2mg")
+animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
