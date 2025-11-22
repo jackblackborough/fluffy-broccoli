@@ -56,8 +56,8 @@ text = "Quit Button"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
-offset_right = 1087.0
-offset_bottom = 627.0
+offset_right = 1286.0
+offset_bottom = 693.0
 color = Color(0.294118, 0.00392157, 0.403922, 1)
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
