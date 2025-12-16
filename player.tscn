@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b8ll22lq4gpu4"]
+[gd_scene load_steps=34 format=3 uid="uid://b8ll22lq4gpu4"]
 
 [ext_resource type="Script" uid="uid://kxgx6asjyasc" path="res://character_body_2d.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://oaabe4wn3nxq" path="res://player/dead-cells-player-idle.png" id="2_i3pqv"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://n0d3gon0wwkj" path="res://player/dead-cells-player-jump.png" id="3_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bwbmxgmregdcn" path="res://player/dead-cells-player-run.png" id="4_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://bibe0vvjnveli" path="res://tilemaps/dead-cells-tilemap.png" id="5_2hs0m"]
+[ext_resource type="Script" uid="uid://bg7fp76hwbhb0" path="res://movement_extras.gd" id="7_1jxqw"]
+[ext_resource type="Script" uid="uid://mwr2odyfkf4n" path="res://node_2d.gd" id="8_dw050"]
+[ext_resource type="Script" uid="uid://d4ipwaavwsniw" path="res://node_2d_2.gd" id="9_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihfcg"]
 radius = 8.0
@@ -212,3 +215,12 @@ drag_vertical_enabled = true
 
 [node name="jumpSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_i3pqv")
+
+[node name="MovementExtras" type="Node2D" parent="."]
+script = ExtResource("7_1jxqw")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("8_dw050")
+
+[node name="accend" type="Node2D" parent="."]
+script = ExtResource("9_b26j0")
