@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 155
-const JUMP_VELOCITY = -250
+const JUMP_VELOCITY = -1000
 const WALL_JUMP_FORCE = Vector2(200, -250)
 const FLOAT_GRAVITY_SCALE = 0.05
 const DASH_FORCE = 600
